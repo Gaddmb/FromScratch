@@ -1,0 +1,26 @@
+// Folder layout = pour les éléments de mise en page partagés (header, footer, grid, etc.).
+
+// mon h1 est dans le header je vais quand meme appeler mon header meme si je n'ai pas de modification a apporter au header
+// si je souhaite utiliser un pseudo classe j'utilise &
+header {
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+
+    @media screen and (max-width: 700px) {
+      font-size: 1rem;
+    }
+
+    &::after {
+      content: "*";
+      position: absolute;
+      color: pink;
+      transform: translateY(-10px);
+      transition: 0.2s;
+    }
+    &:hover::after {
+      transform: scale(2);
+    }
+  }
+}

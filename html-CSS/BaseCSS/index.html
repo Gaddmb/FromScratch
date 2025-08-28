@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cours CSS</title>
+    <!-- J'ai ajouté un favicon pour le site -->
+    <link rel="shortcut icon" href="./assets/img/logo.png" />
+    <!-- J'ai lié le fichier CSS externe pour styliser mon site -->
+    <link rel="stylesheet" href="./assets/style/style.css" />
+  </head>
+  <body>
+    <!-- J'ai ajouté un en-tête pour le titre principal -->
+    <header><h1>Les bases de CSS</h1></header>
+
+    <!-- Partie principale du site -->
+    <main>
+      <!-- J'ai créé une section pour Flexbox -->
+      <div class="flexbox">
+        <!-- J'ai ajouté un titre pour la section Flexbox -->
+        <h2>Flexbox</h2>
+        <!-- J'ai ajouté une liste pour les éléments Flexbox -->
+        <ul>
+          <li>boîte 1</li>
+          <li>boîte 2</li>
+          <li>boîte 3</li>
+        </ul>
+      </div>
+
+      <!-- J'ai créé une section pour Grid -->
+      <div class="grid">
+        <!-- J'ai ajouté un titre pour la section Grid -->
+        <h2>Grid</h2>
+        <!-- J'ai ajouté un conteneur pour les éléments Grid -->
+        <div class="grid-container">
+          <!-- J'ai inséré une image dans le conteneur Grid -->
+          <img src="/assets/img/logo.png" alt="logo_css" />
+          <!-- J'ai ajouté un formulaire dans le conteneur Grid -->
+          <form action="">
+            <!-- J'ai ajouté un champ de texte pour le prénom -->
+            <input type="text" id="firstname" placeholder="prénom" />
+            <!-- J'ai ajouté un champ de texte pour le nom -->
+            <input type="text" id="surname" placeholder="nom" />
+            <!-- J'ai ajouté une zone de texte pour le message -->
+            <textarea
+              cols="30"
+              rows="10"
+              placeholder="ici votre message"
+            ></textarea>
+            <!-- J'ai ajouté un bouton de soumission pour le formulaire -->
+            <input type="submit" value="valider" id="btn-submit" />
+          </form>
+        </div>
+      </div>
+
+      <!-- J'ai créé une section pour les éléments positionnés absolument -->
+      <div class="absolute">
+        <!-- J'ai ajouté un titre pour la section Absolute -->
+        <h2>Absolute</h2>
+        <!-- J'ai ajouté deux cercles positionnés absolument -->
+        <span id="circle1"></span>
+        <span id="circle2"></span>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+/* J'importe la police "Oswald" depuis Google Fonts pour le site */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+/* J'utilise @font-face pour définir une nouvelle police "DMSerif" depuis un fichier local */
+@font-face {
+  font-family: "DMSerif";
+  src: url(./assets/fonts/DMSerifDisplay-Regular.ttf);
+}
+
+/* Je réinitialise les marges et les espacements pour tous les éléments (commenté ici) */
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+  /* J'applique la police "DMSerif" comme police principale et "Verdana" en secours */
+  font-family: "DMSerif", Verdana, sans-serif;
+  /* Je définis un arrière-plan avec une image qui couvre entièrement l'écran */
+  background: url(/assets/img/Mont.jpg) center/cover;
+  /* Je m'assure que le corps couvre au moins toute la hauteur de la fenêtre */
+  min-height: 100vh;
+}
+
+/* Je stylise les éléments <h1> */
+h1 {
+  /* Je crée un espacement entre les lettres */
+  letter-spacing: 10px;
+  /* Je centre le texte */
+  text-align: center;
+  /* Je définis la taille de la police en rem (1rem = 16px) */
+  font-size: 2.5rem;
+  /* J'ajoute une ombre au texte pour le faire ressortir */
+  text-shadow: 3px 3px 8px #00000042;
+  /* Je définis la couleur du texte */
+  color: rgb(140, 10, 29);
+  /* Je choisis la police "Oswald" pour ce titre */
+  font-family: "oswald", sans-serif;
+}
+
+main {
+  /* Je définis une hauteur minimale pour éviter les débordements */
+  min-height: 500px;
+  /* Je limite la largeur du conteneur à 90% de la largeur de la fenêtre */
+  width: 90%;
+  /* Je définis une couleur d'arrière-plan semi-transparente */
+  background: rgba(245, 245, 245, 0.9);
+  /* Je centre le conteneur horizontalement */
+  margin: 0 auto;
+  /* Je définis une bordure bleue autour du conteneur */
+  border: 2px solid blue;
+  /* J'arrondis les coins supérieurs du conteneur */
+  border-radius: 20px 20px 0 0;
+  /* J'ajoute une ombre portée autour du conteneur */
+  box-shadow: 0 0 20px 4px #81cfc6;
+  /* J'ajoute un espacement intérieur de 15px */
+  padding: 15px;
+}
+
+h2 {
+  /* J'élimine les marges par défaut des titres <h2> */
+  margin: 0;
+}
+
+/*** Flex ***/
+/* Je stylise les conteneurs Flexbox, Grid, et Absolute avec une bordure, un rayon de bordure, et un padding */
+.absolute,
+.grid,
+.flexbox {
+  border: 2px solid skyblue;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  min-height: 150px;
+}
+
+/* Flexbox : j'affiche les éléments de la liste en ligne et les espace de manière égale */
+.flexbox ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Flexbox : je stylise les éléments de liste pour les centrer */
+.flexbox li {
+  list-style-type: none;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  background: purple;
+  /* Je centre le contenu des éléments de liste à la fois horizontalement et verticalement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*** Grid ***/
+/* Grid : je définis la disposition en grille avec deux colonnes */
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+/* Grid : je stylise l'image dans la grille */
+.grid img {
+  width: 80%;
+  margin-top: 20px auto;
+  display: block;
+}
+
+/* Grid : je définis la disposition du formulaire en grille */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "i1 i2"
+    "ta ta"
+    "vi bt";
+}
+
+/* Je stylise les champs de texte et les zones de texte */
+input,
+textarea {
+  margin: 5px;
+  border: 1px solid darkblue;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-family: "DMSerif";
+  border-radius: 10px;
+}
+
+textarea {
+  /* Je définis la zone de texte dans la grille */
+  grid-area: ta;
+  height: 40px;
+  resize: none;
+}
+
+#btn-submit {
+  /* Je définis le bouton de soumission dans la grille */
+  grid-area: bt;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Je stylise le bouton de soumission au survol */
+#btn-submit:hover {
+  background: darkblue;
+  color: white;
+}
+
+/**** Absolute ****/
+/* Position relative pour le parent permet de contraindre les éléments en position absolue à l'intérieur de ses frontières */
+.absolute {
+  position: relative;
+}
+
+/* Position absolue pour placer un élément exactement où je veux */
+#circle1 {
+  height: 80px;
+  width: 80px;
+  background: skyblue;
+  position: absolute;
+  border-radius: 150px;
+  top: 0; /* Positionné en haut de son parent */
+  right: 0; /* Positionné à droite */
+}
+
+#circle2 {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  position: absolute;
+  background: teal;
+  /* Je centre l'élément horizontalement dans son parent */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 64px;
+}
+
+/*** Responsive ***/
+/* Je définis des styles spécifiques pour les écrans de moins de 900px */
+@media screen and (max-width: 900px) {
+  .grid-container {
+    display: block;
+  }
+  .grid-container img {
+    width: 40%;
+  }
+}
+
+/* Je définis des styles spécifiques pour les écrans de moins de 610px */
+@media screen and (max-width: 610px) {
+  .flexbox ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "i1"
+      "i2"
+      "ta"
+      "bt";
+  }
+  input,
+  textarea {
+    font-size: 0.8rem;
+  }
+}

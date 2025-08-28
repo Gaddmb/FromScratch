@@ -1,0 +1,3 @@
+# Le fichier .env contient des variables d'environnement sensibles (clés API, mots de passe, etc.)
+# Il ne doit pas être versionné pour éviter toute fuite d'informations confidentielles.
+.env

@@ -1,0 +1,11 @@
+// je fais un @include pour declarer ma mixin puis le nom
+
+section {
+  height: 400px;
+  border: 1px solid $black;
+  @include centerChild;
+  p {
+    width: 50%;
+    text-align: center;
+  }
+}

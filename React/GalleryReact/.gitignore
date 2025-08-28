@@ -1,0 +1,82 @@
+1. Ports Services (Où ça tourne ?)
+
+3000 : React (front-end), json-server (fausse API), Node/Express (back-end).
+5173 : Vite (alternative React plus rapide).
+80 / 443 : Serveurs web (Apache, Nginx).
+27017 : MongoDB (base de données NoSQL).
+3306 : MySQL (base de données SQL).
+5432 : PostgreSQL (base de données SQL).
+6379 : Redis (cache/BD clé-valeur).
+
+//---------------------------------------------------------------------------------------------------//
+
+2. Redux (Gestion d'État)
+
+C'est quoi ? Un système pour gérer les données globales de l'app.
+
+Le cycle simple : Clic ➜ Action ➜ Reducer ➜ Store ➜ UI (mise à jour de l'écran).
+
+Action : Dit "ce qu'on veut faire" (ex: "AJOUTER_UTILISATEUR").
+Reducer : La fonction qui "met à jour l'état" suite à une Action.
+Store : Contient toutes les données de l'app.
+Middleware (optionnel) : Gère l'asynchrone (ex: appels API).
+Redux Toolkit (RTK) : Méthode moderne recommandée. Simplifie tout (moins de code, plus clair). Utiliser pour partager/modifier données globales avec API.
+Slice : Un morceau du Reducer, contient l'état, les actions et leurs mises à jour pour une partie spécifique des données.
+
+//---------------------------------------------------------------------------------------------------//
+
+3. Requêtes HTTP (Parler au Serveur)
+
+CRUD : Create (Créer), Read (Lire), Update (Modifier), Delete (Supprimer).
+POST (Create) : Envoie des données pour créer. Demande un corps {}.
+PUT (Update) : Envoie des données pour modifier. Demande un corps {}.
+GET (Read) : Récupère des données. Pas de corps.
+DELETE (Delete) : Supprime des données. Pas de corps.
+
+//---------------------------------------------------------------------------------------------------//
+
+4. Astuces React & Dev
+
+useState vs useRef :
+useState : Si la valeur affichée à l'écran doit changer et redessiner le composant.
+useRef : Si juste besoin de la valeur sans redessiner le composant.
+Re-render : React redessine le composant pour mettre à jour l'affichage.
+CRA vs Vite :
+CRA : Vieux, plus lent.
+Vite : Moderne, rapide (dev server instantané, build optimisé).
+
+
+---------------------------------------------------------------------------------------------------//
+
+
+// Comment j'ai fait pour lancer le back et le front en même temps :
+
+// 1. J'ai installé le package "concurrently" :
+//      npm install --save-dev concurrently
+
+// 2. J'ai ajouté ce script dans mon package.json pour lancer le backend :
+//      "server": "json-server --watch src/assets/db.json --port 5000",
+//
+//    Puis j'ai ajouté ce script pour lancer les deux en même temps :
+//      "start": "concurrently \"npm run server\" \"npm run dev\""
+//
+//    (avec "server" pour json-server et "dev" pour Vite)
+
+// 3. Ensuite, je lance tout simplement :
+//      npm start
+
+// Cela démarre à la fois le serveur json-server (back) et le front Vite en une seule commande !// ...existing code...
+
+//---------------------------------------------------------------------------------------------------//
+
+// Pourquoi utiliser un fichier config.jsx ?
+
+// - Le fichier config.jsx sert à centraliser toutes les variables de configuration de l’application (ex : URL de l’API, clés, constantes).
+// - Cela permet de modifier facilement une valeur (comme l’URL du backend) sans devoir chercher partout dans le code.
+// - C’est plus propre, plus lisible, et évite les erreurs si tu dois changer d’environnement (dev, prod, etc).
+// - Bonne pratique : placer ce fichier dans un dossier "config" dans "src" (ex : src/config/config.jsx), surtout si tu ajoutes d’autres fichiers de config plus tard.
+// - Exemple de contenu :
+//      export const API_URL = "http://localhost:5000";
+
+// Résumé :
+// Centraliser la config = code plus propre, plus facile à maintenir et à faire évoluer.

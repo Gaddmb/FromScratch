@@ -1,0 +1,16 @@
+// je fais indentation point fort de sass
+// je dis ton enfant ul... Ou si je voulais toucher que le li j'aurais pu le pointer directement
+// pour adapter le code a tout les navigateur dans mon fichier settings.json j'ai copié le liens dans live sass compiler prefix
+nav {
+  background: $color1;
+  border-radius: 10px;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    li {
+      list-style: none;
+    }
+  }
+}

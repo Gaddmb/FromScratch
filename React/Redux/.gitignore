@@ -1,0 +1,46 @@
+Utilisateur clique ➜ Action ➜ Reducer ➜ Store ➜ Composant (UI)
+
+
+| Élément             | Rôle                                                                |
+| ------------------- | ------------------------------------------------------------------- |
+| **Action**          | Objet qui décrit ce qu’on veut faire (ex: `ADD_POST`, `FETCH_USER`) |
+| **Reducer**         | Fonction qui **modifie l’état** du `store` en fonction de l’action  |
+| **Store**           | Contient **l’état global** de l’application                         |
+| **Middleware**      | (optionnel) permet de gérer l’**asynchrone** (ex: fetch API)        |
+| **Composant React** | Affiche les données du store et envoie des actions                  |
+
+ Différence entre Redux classique et Redux Toolkit
+🔹 Redux classique (ancienne méthode)
+Nécessite beaucoup de boilerplate (code répétitif)
+
+Doit créer séparément :
+
+les actions
+
+les action types
+
+les reducers
+
+un store avec combineReducers
+
+Utilise des switch/case pour gérer les actions dans les reducers
+
+Peut devenir difficile à maintenir dans de gros projets
+
+🔸 Redux Toolkit (méthode moderne, officielle depuis 2020)
+Recommandé par l’équipe Redux
+
+Fournit des fonctions simplifiées comme :
+
+configureStore (création du store)
+
+createSlice (state + actions + reducers regroupés)
+
+DevTools intégrés automatiquement
+
+Code plus clair, plus court, plus facile à lire
+
+Moins d’erreurs possibles grâce à l’automatisation
+
+Redux Toolkit permet de créer des applications plus rapidement, avec moins de code et de meilleures pratiques.
+Redux classique fonctionne toujours, mais n’est plus recommandé pour démarrer de nouveaux projets.

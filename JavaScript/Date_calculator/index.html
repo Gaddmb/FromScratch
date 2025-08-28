@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Gestion par JavaScript : Les données, comme les dates de début et de fin, sont récupérées via JavaScript.
+       Il n'est pas nécessaire d'utiliser une balise <form> car il n'y a pas d'interaction serveur.
+       Absence d'envoi de données vers un serveur : Le but ici est de faire des calculs ou des affichages locaux 
+       sans soumettre de formulaire formellement.
+       Simplicité de l'interface utilisateur : Ce code peut servir de simple calculateur sans soumission de données. -->
+
+    <div class="card">
+      <h2>Book your holiday</h2>
+      <div><span id="nightPrice">46</span> € / night</div>
+
+      <label for="">Start</label>
+      <input id="start_date" type="date" required />
+      <label for="">End</label>
+      <input id="end_date" type="date" required />
+
+      <h3>Total : <span id="total"></span> €</h3>
+      <button class="btn btn cyan accent-3">Validate</button>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

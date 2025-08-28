@@ -1,0 +1,17 @@
+// File _settings.scss = pour les variables globales et les configurations de style (couleurs, typographie, espacements, variable , mixin etc.).
+
+// voici des variables
+$color1: pink;
+$color2: orange;
+$color3: cyan;
+$white: rgb(241, 241, 241);
+$black: rgb(23, 23, 23);
+
+// mixin c'est comme une variable mais sur plusieur ligne
+// voici mixins
+// je dis mixin ensuite le nom de la mixin
+@mixin centerChild {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

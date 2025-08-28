@@ -1,0 +1,150 @@
+<!-- pour la structure de base je tape ! ou html 5 -->
+<!-- pour faire un commentaire je fais ctrl + /  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- le titre doit etre mit le plus haut possible de la page  -->
+    <title>Document</title>
+    <!-- Icone de l'onglet  -->
+    <link rel="shortcut icon" href="html _logo.png" />
+  </head>
+  <body>
+    <header>
+      <!-- un H1 par page (recommandée par google) -->
+      <h1><span>&#9729;</span> texte - titre H1</h1>
+      <!-- balise p pour du texte -->
+      <p>
+        Texte basique <em>Voici un texte en italique</em>
+        <strong>Et un texte en gras </strong>
+        <span>L'element span ne revient pas a la ligne</span>
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        blanditiis praesentium fugit unde labore quae sit dicta et tempora
+        voluptatibus voluptatem ducimus, iste, mollitia eius, optio dolor minus!
+        Minima, aliquam?
+      </p>
+    </header>
+    <!-- section pour matérialise des grosses parties  -->
+    <section>
+      <!-- div pour matérialise des petites parties  -->
+      <div>
+        <h2>Les Photos titre H2</h2>
+        <!-- alt si la photo ne s'affiache pas pour les non voyant et robot de google -->
+        <img src="Naruto.webp" height="200" width="200" alt="portrait_naruto" />
+      </div>
+      <div>
+        <h3>Les listes - titre H3</h3>
+        <ul>
+          <li>UL = Unordered List</li>
+          <li>UL = Unordered List</li>
+          <li>UL = Unordered List</li>
+        </ul>
+        <ol>
+          <li>OL = Ordered list</li>
+          <li>OL = Ordered list</li>
+          <li>OL = Ordered list</li>
+        </ol>
+      </div>
+      <div>
+        <h4>Les Tableau - titre H4</h4>
+        <table border="1" width="50%">
+          <!-- legende -->
+          <caption>
+            Population d'europe
+          </caption>
+          <!-- En tete -->
+          <thead>
+            <tr>
+              <th>Pays</th>
+              <th>Population</th>
+            </tr>
+          </thead>
+          <!-- corps du tableau -->
+          <tbody>
+            <tr>
+              <td>France</td>
+              <td>66M</td>
+            </tr>
+            <tr>
+              <td>Allemagne</td>
+              <td>82M</td>
+            </tr>
+            <tr>
+              <td>Espagne</td>
+              <td>47M</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h5>Lien titre H5</h5>
+        <!-- lien pour un site -->
+        <!-- target pour ne pas quitter la page actuel  -->
+        <a href="https://htmlcheatsheet.com/" target="_blank"
+          >Html Cheat Sheet</a
+        >
+        <br />
+        <a href="https://www.toptal.com/designers/htmlarrows/" target="_blank"
+          >Icones en HTML</a
+        >
+      </div>
+      <div>
+        <h6>video titre H6</h6>
+        <video src="itachi.mp4" height="150" autoplay loop muted></video>
+      </div>
+    </section>
+    <br />
+    <section>
+      <h2>Formulaire</h2>
+      <form action="" method="">
+        <!-- un input pour passer des informations dans un formulaire  -->
+        <!-- je cnonnecte mon label et un input  -->
+        <label for="name">Nom </label
+        ><input id="name" type="text" placeholder="Entrez votre nom" /> <br />
+        <label for="age">Age </label>
+        <input id="age" type="number" min="0" max="99" step="1" value="18" />
+        <br />
+
+        <!-- input select -->
+        <label for="gender">Genre</label>
+        <select id="gender">
+          <option value="homme">Homme</option>
+          <option selected value="femme">Femme</option>
+        </select>
+
+        <!-- input radio -->
+        <!-- je connecte mes radios name="type" -->
+        <div>
+          <input type="radio" name="type" id="human" checked />
+          <label for="human">Humain</label>
+
+          <input type="radio" name="type" id="dog" />
+          <label for="Chien">Chien</label>
+
+          <input type="radio" name="type" id="cat" />
+          <label for="cat">Chat</label>
+        </div>
+        <textarea
+          cols="30"
+          rows="10"
+          placeholder="Entrez votre demande ici"
+        ></textarea>
+        <br />
+
+        <!-- input checkbox -->
+        <!-- pour le checkbox je peux enrouler mon input  -->
+        <label><input type="checkbox" />Accepter les CGV</label> <br />
+        <input type="submit" value="Valider" />
+      </form>
+    </section>
+
+    <footer>
+      <a href="mailto:gadmbengi@gmail.com">Ecrivez-moi</a><br />
+      <a href="notice.txt" download="nom-du-fichier">Télécharger la notice</a>
+    </footer>
+  </body>
+</html>

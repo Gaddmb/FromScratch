@@ -1,0 +1,8 @@
+// index.scss rassemble tout les fichiers sass
+// important toujours déclarer le fichier setting en premier que sass connaissent les variables
+
+@import "./settings";
+@import "../../assets/pages/home";
+@import "../../assets/layout/navbar";
+@import "../../assets/layout/header";
+@import "../../assets/layout/section";

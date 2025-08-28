@@ -1,0 +1,65 @@
+Lorsque je souhaite accéder à une propriété d'un objet et vérifier si elle existe ou non, le mieux est d'utiliser l'opérateur optionnel (?.)
+
+Lorsque je souhaite afficher une valeur seulement si elle existe (par exemple, si elle n'est pas undefined ou null), j'utilise l'opérateur logique &&
+
+J’utilise Vite pour mon projet React, et Vite gère automatiquement les fichiers *.module.scss comme des CSS Modules. En renommant mon fichier SCSS en .module.scss, Vite a activé le support des exports de variables SCSS via le bloc :export {}. C’est ce renommage qui a permis d’importer les variables dans mon composant React comme un objet JS. Je n’ai pas eu besoin de faire de configuration manuelle, car Vite gère déjà Sass et CSS Modules de base
+
+Rappel pour connecte un input et un label c'est avec htmlfor et l'id du input
+
+j'ai utilise Recharts pour pouvoir faire des graphiques dans mon projet React. Recharts est une bibliothèque de graphiques pour React qui permet de créer des graphiques interactifs et réactifs avec une API simple.Pour afficher mes données de manière visuelle. pour cela faire un npm install recharts
+
+<GlobalChart coinsData={coinsData} />
+
+en fait, quand tu écris <GlobalChart coinsData={coinsData} />, ce que tu fais, c’est que tu utilises un composant React (dans ce cas GlobalChart), et tu lui transmets des données.
+Le nom coinsData que tu mets avant le = c’est le nom de la prop, c’est comme une étiquette. Tu choisis ce nom pour que le composant enfant sache comment s’appelle la donnée qu’il reçoit.
+Et ce que tu mets entre les accolades {coinsData} après le =, c’est la valeur réelle que tu veux transmettre. Souvent, c’est une variable qui contient des données que tu as récupérées avant, par exemple depuis une API ou via un useState
+
+ne pas oublie lorsque ej fasi un map il fait une clé unique pour chaque element
+
+toString() ➜ pour analyser un nombre (ex: compter les chiffres).
+toLocaleString() ➜ pour afficher un nombre joliment.
+Intl.NumberFormat() ➜ plus puissant pour contrôler décimales et langue.
+Toujours retourner une string formatée dans priceFormater(), pour éviter .toLocaleString() dans ton JSX.
+
+Formater un nombre
+const numberFormatter = new Intl.NumberFormat("fr-FR", { minimumFractionDigits: 2 });
+console.log(numberFormatter.format(123456.789)); // "123 456,79"
+
+Formater une date
+const dateFormatter = new Intl.DateTimeFormat("fr-FR", { dateStyle: "full", timeStyle: "short" });
+console.log(dateFormatter.format(new Date())); // "mardi 4 juin 2025 à 14:30"
+
+a retenir un id ne peut pas etre uniquement des chiffres ou un nombre il peut etre un chaine de caractere
+
+
+pour installer redux faire npm install @reduxjs/toolkit react-redux
+ou npm install redux react-redux @reduxjs/toolkit @redux-devtools/extension
+
+redux : Le core de Redux
+
+react-redux : Pour connecter Redux à React
+
+@reduxjs/toolkit : La manière recommandée d'écrire du code Redux aujourd'hui
+
+@redux-devtools/extension : optionnel
+
+reduxDevTools  va simuler le store Redux dans le navigateur, ce qui est très utile pour le débogage et la visualisation de l'état de l'application.
+
+reduce est un state manager qui gere l'etat de l'application il permet a nos composants de partager des données et de les mettre à jour de manière centralisée. 
+
+
+dispatch(setStableState(true)) : Le composant envoie une action.
+
+L’action : C’est juste un objet { type: ..., payload: ... }, créé par une action creator.
+
+Le store : C’est le cœur de Redux. Il reçoit cette action via dispatch().
+
+Le store ne modifie rien lui-même. Il transmet l’action à tous les reducers.
+
+Chaque reducer vérifie le type de l’action et, si ça le concerne, retourne un nouvel état.
+
+Le state global est mis à jour.
+
+Tous les composants qui utilisent useSelector(...) pour lire ce bout d’état sont mis à jour automatiquement.
+
+L'action transite toujours par le store, qui ensuite la distribue à tous les reducers. 
